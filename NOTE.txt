@@ -1,0 +1,41 @@
+// char str1[9] = "aabbccdd";
+
+// int main( void )
+// {
+//     printf("The string: %s\n", str1);
+//     memcpy(str1 + 2, str1, 6);
+//     printf("New memcpy string: %s\n", str1);
+
+//     strcpy(str1,"aabbccdd");   // reset string
+
+//     printf("The string: %s\n", str1);
+//     memmove(str1 + 2, str1, 6);
+//     printf("New memmove string: %s\n", str1);
+// }
+
+// //memcpy modifies the elements every single times in the loop, and copy it from modified value.
+// //memmove copy whole string in temp variable, then copy whole string at once.
+
+Library with Makefile tutorial
+https://dev.to/iamkhalil42/all-you-need-to-know-about-c-static-libraries-1o0b
+
+list all the object files in the library
+## ar -t libname.a
+
+
+HEADER FILE
+##https://markkevinbaltazar.medium.com/c-header-files-and-prototypes-170ecdf526d
+##Simple Example : https://stackoverflow.com/questions/7109964/creating-your-own-header-file-in-c
+
+COMPILE FILE
+cc file.c -> a.out
+cc -o filename file.c -> make a file with filename
+
+DEREFERENCING AFTER FREE
+its undifined behaviour
+https://stackoverflow.com/questions/19523179/why-dereferencing-a-c-pointer-after-free-gives-value-0
+
+Makefiles tutorial
+https://medium.com/@Anatolii_Zhadan/makefile-to-create-a-library-in-c-3c2ad3d281
+https://makefiletutorial.com/
+“relink” merely means that make will execute the command to link objects into an executable again. 
