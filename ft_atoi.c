@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 08:44:48 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/10 12:12:49 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/12 17:16:00 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ int ft_atoi(const char* str)
 //abc123 = 0
 
 
-int main(){
-    char str[]="";
-    int res = atoi(str);
-    int myRes = ft_atoi(str);
-    printf("String: %s, Int: %d\n", str, res);
-    printf("String: %s, Int: %d", str, myRes);    
-}
+// int main(){
+//     char str[]="";
+//     int res = atoi(str);
+//     int myRes = ft_atoi(str);
+//     printf("String: %s, Int: %d\n", str, res);
+//     printf("String: %s, Int: %d", str, myRes);    
+// }

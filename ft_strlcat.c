@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 14:44:57 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/10 15:52:12 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/12 17:14:58 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,27 +41,27 @@ unsigned int ft_strlcat(char* dst, const char* src, unsigned int size)
     return lensum;
 }
 
-int main(){
+// int main(){
 
-    int len = 7;
+//     int len = 7;
     
-    char dStr[15] = "Hello";
-    char sStr[] = "World";
+//     char dStr[15] = "Hello";
+//     char sStr[] = "World";
 
 
-    int res = strlcat(dStr, sStr, len);
-    printf("res is: %d\n", res);
-    printf("dest is: %s\n", dStr);
+//     int res = strlcat(dStr, sStr, len);
+//     printf("res is: %d\n", res);
+//     printf("dest is: %s\n", dStr);
 
-    char dStr_1[15] = "Hello";
-    char sStr_1[] = "World";
+//     char dStr_1[15] = "Hello";
+//     char sStr_1[] = "World";
 
-    int res_1 = ft_strlcat(dStr_1, sStr_1, len);
-    printf("res is: %d\n", res_1);
-    printf("dest is: %s\n", dStr_1);
+//     int res_1 = ft_strlcat(dStr_1, sStr_1, len);
+//     printf("res is: %d\n", res_1);
+//     printf("dest is: %s\n", dStr_1);
     
-    return 0;
-}
+//     return 0;
+// }
 
 //return value = length sum of dStr, sStr
 //len is to be # of letter in dest - 1.
