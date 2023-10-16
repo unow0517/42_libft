@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:05:25 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/12 17:15:38 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/16 12:19:14 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 #include <string.h>
 
 int ft_strncmp(const char* str1, const char* str2, unsigned int n){
-    while(*str1 != '\0' && *str2 != '\0' && n--)
+    unsigned char* str1_1 = (unsigned char*)str1;
+    unsigned char* str2_1 = (unsigned char*)str2;
+    while((*str1_1 != '\0' || *str2_1 != '\0') && n--)
     {
-        if(*str1 != *str2){
-            return *str1-*str2;
+        if(*str1_1 != *str2_1){
+            // printf("*str1_1: %d\n", *str1_1);
+            // printf("*str2_1: %d\n", *str2_1);
+            return *str1_1-*str2_1;
         }else{
-            str1++;
-            str2++;
+            str1_1++;
+            str2_1++;
         }
     }
     return 0;
@@ -34,11 +38,11 @@ int ft_strncmp(const char* str1, const char* str2, unsigned int n){
 //     int ret;
 //     int myRet;
     
-//     strcpy(str1, "Abbb");
-//     strcpy(str2, "aAA");
+//     strcpy(str1, "test\200");
+//     strcpy(str2, "test\0");
 
-//     ret = strncmp(str1, str2, 0);
-//     myRet = ft_strncmp(str1, str2, 0);
+//     ret = strncmp(str1, str2, 6);
+//     myRet = ft_strncmp(str1, str2, 6);
 
 //     printf("ret value is: %d\n", ret);
 //     printf("myRet value is: %d", myRet);
