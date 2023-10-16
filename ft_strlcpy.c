@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 14:43:49 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/13 08:42:46 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/13 09:26:58 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,48 +72,12 @@ unsigned long ft_strlcpy(char *dst, const char* src, unsigned int n)
         result = srclen;
     //WHEN N == 0 END
 
-
-
     return result;
-
-
-    
-    // unsigned long src_len = 0;
-    // int i = 0;
-    // while(src[i] != '\0'){
-    //     src_len++;
-    //     // printf("n: %d\n",n);
-    //     if(n >= 1)
-    //     {
-    //         dst[i] = src[i];
-    //         n--;
-    //         // i++;            
-    //     }
-
-        
-    //     // if(n==0){
-    //     //     dst[i] = '\0';
-    //     // }
-
-    //     i++;
-    // }
-
-    // if(n == 0){
-    //     return src_len;
-    // }
-
-    // if(src[i] == '\0' || n  ){
-    //     dst[i+1] = '\0';
-    //     // dst[i] = '\0';
-    //     return src_len;
-    // }
-
-    // return src_len;
 }
 
 
 // int main(){
-//     int n = 0;
+//     int n = 8;
 //     char src[50] = "lora";
 //     char dest[15] = "rrrrrr";
 //     printf("n: %d\n",n);
