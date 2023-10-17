@@ -6,13 +6,19 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:20:43 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/09 11:21:02 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/17 12:27:01 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    return((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') ? 1:0);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	{
+		return (1);
+	}
+	else if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
 
 // #include <stdio.h>

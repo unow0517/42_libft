@@ -1,9 +1,3 @@
 {
-    "files.associations": {
-        "stdio.h": "c",
-        "string.h": "c",
-        "memory.h": "c",
-        "bit": "c",
-        "sstream": "c"
-    }
+    "editor.detectIndentation": false
 }

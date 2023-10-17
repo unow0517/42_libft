@@ -6,50 +6,46 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:24:07 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/11 12:57:00 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/17 18:01:20 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "libft.h"
 
+char	*ft_strdup(const char *src)
+{
+	char	*result;
+	int		i;
+	int		j;
 
-char* ft_strdup(const char* src){
-    char* result;
-    int len = 0;
-    char* ptr = (char*)src;
-    
-    while(*src != '\0'){
-        len++;
-        src++;    
-    }
-
-    result = (char*)malloc(len*sizeof(char));
-    // printf("result adress: %p\n",result);
-    
-    char* resultptr = result;
-
-    while(*ptr != '\0'){
-        *resultptr = *ptr;
-        resultptr++;
-        ptr++;
-    }
-    if(*ptr == '\0')
-        *resultptr = '\0';
-        
-    return result;
+	i = 0;
+	result = (char *)malloc((strlen(src)+1) * sizeof(char));
+	if (!result)
+		return (0);
+	while (src[i] != '\0')
+	{
+		result[i] = src[i];
+		i++;
+	}
+	result[i] = '\0';
+	j = 0;
+	if (src[j] == '\0')
+		result[j] = '\0';
+	return (result);
 }
 
-int main(){
-    char src[] = "Hello";
-    char* target = strdup(src);
-    char* target_1 = ft_strdup(src);
+// int main(){
+//     char src[] = "lorem ipsum dolor sit amet";
+//     char* target = strdup(src);
+//     char* target_1 = ft_strdup(src);
 
-    printf("target: %s\n", target);
-    printf("target_1: %s\n", target_1);
-    printf("target[0]: %c\n", target[0]);
-    // free(target_1);
-    printf("target[0]_after free: %c\n", *target_1);
-    return 0;
-}
+//     printf("target: %s\n", target);
+//     printf("target_1: %s\n", target_1);
+//     // printf("target[0]: %c\n", target[0]);
+//     free(target_1);
+//     // printf("target[0]_after free: %c\n", *target_1);
+//     return 0;
+// }

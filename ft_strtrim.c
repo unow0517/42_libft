@@ -6,21 +6,23 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:26:11 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/12 10:28:16 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/16 17:10:43 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-unsigned int ft_strlen(const char* str)
-{
-    unsigned int len = 0;
-    while(*str != '\0'){
-        len++;
-        str++;
-    }
-    return len;
-}
+#include "libft.h"
+
+// unsigned int ft_strlen(const char* str)
+// {
+//     unsigned int len = 0;
+//     while(*str != '\0'){
+//         len++;
+//         str++;
+//     }
+//     return len;
+// }
 
 char* ft_strtrim(char const *s1, char const *set){
     // char* ps1 = (char*)s1;
@@ -86,17 +88,17 @@ char* ft_strtrim(char const *s1, char const *set){
     }
     if(k == len_needed)
         s1_trimmed[k]='\0';
-    printf("strlenResult: %d\n", ft_strlen(s1_trimmed));
+    printf("strlenResult: %lu\n", ft_strlen(s1_trimmed));
     return s1_trimmed;
 }
 
 
-int main(){
-    char s1[] = "CatDogCatLion";
-    char set[] = "Cat";
-    //result should be lloorld
+// int main(){
+//     char s1[] = "CatDogCatLion";
+//     char set[] = "Cat";
+//     //result should be lloorld
 
-    char* res = ft_strtrim(s1, set);
-    printf("result: %s",res);
-    return 0;
-}
+//     char* res = ft_strtrim(s1, set);
+//     printf("result: %s",res);
+//     return 0;
+// }

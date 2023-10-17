@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:20:30 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/17 10:32:55 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/17 13:50:18 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ void	*ft_memcpy(void *dest, const void *src, unsigned int n)
 		return (0);
 	while (n)
 	{
-		*pd = *ps;
-		pd++;
-		ps++;
+		*pd++ = *ps++;
 		n--;
 	}
 	return (dest);

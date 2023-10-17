@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:05:25 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/16 12:19:14 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/16 12:23:45 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ int ft_strncmp(const char* str1, const char* str2, unsigned int n){
     }
     return 0;
 }
+
+//char value range (-128 ~ 127  or 0 to 255)
+//unsigned char value range ( 0 to 255)
 
 
 

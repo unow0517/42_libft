@@ -1,13 +1,27 @@
-void ft_bzero(void *str, unsigned int n)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/16 16:41:54 by yowoo             #+#    #+#             */
+/*   Updated: 2023/10/17 11:52:39 by yowoo            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_bzero(void *str, unsigned int n)
 {
-    unsigned char* p = str;
-    while(n > 0){
-        *p = '\0';
-        p++;
-        n--;
-    }
-    
-};
+	unsigned char	*p;
+
+	p = str;
+	while (n > 0)
+	{
+		*p = '\0';
+		p++;
+		n--;
+	}
+}
 
 // #include <stdio.h>
 // #include <string.h>
@@ -19,9 +33,6 @@ void ft_bzero(void *str, unsigned int n)
 
 //     ft_bzero(str,7);
 //     puts(str+7);
-   
 //     return(0);
 // }
-
-
 //bzero does not return value

@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 14:43:49 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/13 09:26:58 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/16 17:08:37 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 #include <string.h>
 #include "libft.h"
 
-unsigned long ft_strlen(const char* str)
-{
-    unsigned long len = 0;
-    while(*str != '\0'){
-        len++;
-        str++;
-    }
-    return len;
-}
+// unsigned long ft_strlen(const char* str)
+// {
+//     unsigned long len = 0;
+//     while(*str != '\0'){
+//         len++;
+//         str++;
+//     }
+//     return len;
+// }
 
 unsigned long ft_strlcpy(char *dst, const char* src, unsigned int n)
 {

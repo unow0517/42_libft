@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 07:53:17 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/11 10:06:03 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/16 16:30:27 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ char* ft_strnstr(const char* big, const char *little, unsigned int n)
     return bigptr;
 }
 
-int main(){
-    char big[] = "Hello World World asd";
-    char small[] = "orld";
+// int main(){
+//     char big[] = "Hello World World asd";
+//     char small[] = "orld";
     
-    int len =50;
-    char* res = strnstr(big, small, len);
-    printf("strnstr is: %s\n",res);
-    char* myRes = strnstr(big, small, len);
-    printf("my_strnstr is: %s",myRes);
-}
-// after null-term. is not taken into account
+//     int len =50;
+//     char* res = strnstr(big, small, len);
+//     printf("strnstr is: %s\n",res);
+//     char* myRes = strnstr(big, small, len);
+//     printf("my_strnstr is: %s",myRes);
+// }
+// // after null-term. is not taken into account

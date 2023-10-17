@@ -6,15 +6,21 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:20:50 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/09 11:21:09 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/17 12:42:10 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    return ( ( c >= 040 && c <= 0176) || ( c >= 0x20 && c <= 0x7e) || ( c >= 32 && c <= 126));
+	if ((c >= 040 && c <= 0176) || (c >= 0x20 && c <= 0x7e))
+		return (1);
+	if ((c >= 32 && c <= 126))
+		return (1);
+	return (0);
 }
 
+//return ( ( c >= 040 && c <= 0176) || 
+//( c >= 0x20 && c <= 0x7e) || ( c >= 32 && c <= 126));
 // #include <stdio.h>
 // int main(){
 //     int result = ft_isprint(31);

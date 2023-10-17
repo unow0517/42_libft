@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:31:29 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/12 13:16:27 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/16 16:29:28 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,18 +72,18 @@ char** ft_split(char const *s, char c){
     return array;
 }
 
-int main(){
-    char string[] = "Helld World Heildronn";
-    char delim = 'd';
-    printf("Original String: %s\n", string);
-    char** token = ft_split(string, delim);
-    int i = 0;
-    while (token[i] != 0){
-        printf("elements: %s\n",token[i]);
-        i++;
-    }
-    printf("%s",token[2]);
+// int main(){
+//     char string[] = "Helld World Heildronn";
+//     char delim = 'd';
+//     printf("Original String: %s\n", string);
+//     char** token = ft_split(string, delim);
+//     int i = 0;
+//     while (token[i] != 0){
+//         printf("elements: %s\n",token[i]);
+//         i++;
+//     }
+//     printf("%s",token[2]);
 
-    // free (token);
-    return 0;
-}
+//     // free (token);
+//     return 0;
+// }
