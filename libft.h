@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 10:37:28 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/17 18:02:54 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/18 14:10:19 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ char			*ft_strchr(const char *str, int c);
 char			*ft_strdup(const char *src);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strrchr(const char *str, int c);
+char			*ft_strtrim(char const *s1, char const *set);
 int				ft_strncmp(const char *str1, const char* str2, unsigned int n);
 void			*ft_memchr(const void *str, int c, unsigned int n);
 int				ft_memcmp(const void* str1, const void* str2, unsigned int n);

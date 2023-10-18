@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 08:44:48 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/17 11:12:11 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/18 14:52:02 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ int	ft_atoi(const char *str)
 
 	sign = 1;
 	len = 0;
-	while (*str == '\t' || *str == '\n' || *str == '\r')
-		str++;
-	while (*str == '\v' || *str == '\f' || isspace(*str))
+	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
 	if (*str == '-')
 	{

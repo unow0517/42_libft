@@ -6,30 +6,29 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:40:33 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/09 18:05:02 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/17 20:16:06 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-char* ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
-    char* newptr = 0;
-    char* ptr = (char*) str;
-    
-    while(*ptr != '\0'){
-        if(*ptr != c){
-            ptr++;
-        }else{
-            newptr = ptr;
-            ptr++;
-        }
-    }
-    
-    if(*ptr == '\0'){
-        return newptr;
-    }
+	char	*ptr;
+	int		i;
 
-    return 0;
+	ptr = (char *) str;
+	i = 0;
+	while (ptr[i] != '\0')
+		i++;
+
+	while (i >= 0)
+	{
+		if (ptr[i] == (char)c)
+			return (ptr + i);
+		i--;
+	}
+	return (0);
 }
 
 

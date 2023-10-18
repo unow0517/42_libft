@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 14:43:49 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/16 17:08:37 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/17 18:45:39 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,49 @@
 
 unsigned long ft_strlcpy(char *dst, const char* src, unsigned int n)
 {
+    unsigned long result = 0;
+    unsigned long srclen = strlen(src);
+    char* srcp = (char*)src;
+    char* dstp = dst;
+	unsigned n1;
+
+
+    //WHEN n  >= srclen + 1
+    while(*srcp != '\0' && n >= srclen + 1){
+        *dstp = *srcp;
+        dstp++;
+        srcp++;
+    }
+
+    if(*srcp == '\0')
+        *dstp = '\0';
+        result = srclen;
+    //WHEN n  >= srclen + 1 END
+
+    //WHEN n < srclen + 1
+	n1 = n;
+    while(*srcp != '\0' && n1 < srclen + 1 && n1 ){
+        *dstp = *srcp;
+        dstp++;
+        srcp++;
+        n1--;
+    }
+
+	
+    if(n1 == 0){
+        *(dstp-1) = '\0';
+		result = srclen;
+    }
+    
+	// WHEN n < srclen + 1 END
+
+    //WHEN N == 0
+    if(n==0)
+        result = srclen;
+    //WHEN N == 0 END
+
+    return result;
+}
 
     //test dest is rrrrrr
     //returns length of intended string;
@@ -35,53 +78,13 @@ unsigned long ft_strlcpy(char *dst, const char* src, unsigned int n)
     //when n > 1, dest is src, with length -1
     //when n < length of dest, rest of dest should be kept
     //length is including '\0'
-    unsigned long result = 0;
-    unsigned long srclen = ft_strlen(src);
-    char* srcp = (char*)src;
-    char* dstp = dst;
-
-    //WHEN n  >= srclen + 1
-    while(*srcp != '\0' && n >= srclen + 1){
-        *dstp = *srcp;
-        dstp++;
-        srcp++;
-
-    }
-
-    if(*srcp == '\0')
-        *dstp = '\0';
-        result = srclen;
-    //WHEN n  >= srclen + 1 END
-
-    //WHEN n < srclen + 1
-    while(*srcp != '\0' && n < srclen + 1 && n ){
-        *dstp = *srcp;
-        dstp++;
-        srcp++;
-        n--;
-    }
-
-    if(n == 0){
-        *(dstp-1) = '\0';
-    }
-    //WHEN n < srclen + 1 END
-
-    //WHEN N == 0
-    if(n==0)
-
-        result = srclen;
-    //WHEN N == 0 END
-
-    return result;
-}
-
 
 // int main(){
-//     int n = 8;
-//     char src[50] = "lora";
+//     int n = 0;
+//     char src[50] = "aaa";
 //     char dest[15] = "rrrrrr";
 //     printf("n: %d\n",n);
-//     printf("srclen: %lu\n\n",ft_strlen(src));
+//     printf("srclen: %lu\n\n",strlen(src));
 //     printf("strlcpy: %lu\n",strlcpy(dest,src,n));
 //     puts(dest);
 

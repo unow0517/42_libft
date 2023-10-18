@@ -6,18 +6,21 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:20:56 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/12 18:43:57 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/17 18:47:28 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long ft_strlen(const char* str)
+unsigned long	ft_strlen(const char *str)
 {
-    unsigned int len = 0;
-    while(*str != '\0'){
-        len++;
-        str++;
-    }
-    return len;
+	unsigned int	len;
+
+	len = 0;
+	while (*str != '\0')
+	{
+		len++;
+		str++;
+	}
+	return (len);
 }
 
 // #include <stdio.h>
