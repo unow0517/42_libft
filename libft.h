@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 10:37:28 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/18 14:10:19 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/20 10:31:13 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void			*ft_memchr(const void *str, int c, unsigned int n);
 int				ft_memcmp(const void* str1, const void* str2, unsigned int n);
 char			*ft_strnstr(const char *big, const char *little, unsigned int n);
 int				ft_atoi(const char *str);
+char			*ft_itoa(int n);
 char			*ft_substr(char const *s, unsigned int start, unsigned long len);
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif  //header guard = line 1, 2 and the last line, it is once-only header

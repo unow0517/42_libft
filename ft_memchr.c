@@ -6,10 +6,9 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 07:26:46 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/17 12:55:46 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/18 18:43:43 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 void	*ft_memchr(const void *str, int c, unsigned int n)
 {
@@ -18,7 +17,7 @@ void	*ft_memchr(const void *str, int c, unsigned int n)
 	ptr = (char *)str;
 	while (n--)
 	{
-		if (*ptr == c)
+		if (*ptr == (char)c)
 			return (ptr);
 		else
 			ptr++;
