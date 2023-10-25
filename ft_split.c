@@ -6,84 +6,117 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:31:29 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/16 16:29:28 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/25 10:51:05 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "libft.h"
 
-char** ft_split(char const *s, char c){
-    int i = 0;
-    int cnt = 0;
+static int	cntwords(char const *s, char c)
+{
+	int	cnt;
 
-    while(s[i] != '\0'){
-        if(s[i] == c){
-            cnt++;
-        }
-        i++;
-    }
-    char** array;
-    printf("cnt: %d\n",cnt);
+	cnt = 0;
+	while (*s != '\0')
+	{
+		if (*s != c && (*(s + 1) == c || *(s + 1) == '\0'))
+			cnt++;
+		s++;
+	}
+	return (cnt);
+}
 
-    array = malloc((cnt+1)*sizeof(char*));
+static int	isdelim(char c, char delim)
+{
+	if (c == delim || c == '\0')
+		return (1);
+	return (0);
+}
 
-    
-    i = 0;
-    int i_subst = 0;
-    int j = 0;
-    while(s[i] != '\0'){
-        if(s[i] == c && i_subst != 0){
-            array[j] = malloc((i_subst)*sizeof(char));
-            j++;
-            i_subst = 0;
-        }
-        i_subst++;
-        i++; 
-    }
-    
-    printf("i_subst:%d\n", i_subst);
-    printf("j: %d\n",j);
-    printf("i: %d\n",i);
+char	**ft_split(char const *s, char c)
+{
+	int 	i,j;
+	char	**array;
+	int		cnt;
+	char	*s_ptr;
 
-    //SEGMENTATION FAULT PART!!
-    // if(s[i] == '\0'){
-    //     array[j] = malloc((i_subst)*sizeof(char));
-    // }
+	s_ptr = (char *)s;
+	cnt = cntwords(s, c);
+	// printf("cnt: %d\n",cnt);
+	//allocate mem for substrings
+    // array = malloc((cnt + 1) * sizeof(char *));
+	// if (!array)
+	// 	return (0);
+	if (!s || !(array = malloc((cntwords(s, c) + 1) * sizeof(char *))))
+		return (0);
+	i = 0; // array index
+	j = 0; // subarr index
+	
+	//allocate subarray
+	while(*s_ptr != '\0' && i < cnt)
+	{
+		if(!isdelim(*s_ptr, c) && isdelim(*(s_ptr+1), c)) //when reach break points
+		{
+			array[i] = malloc((j + 1) * sizeof(char));//typecasting?
+			i++;
+		}
+		else if(!isdelim(*s_ptr,c))
+		{
+			j++;
+		}
+		s_ptr++;
+	}
+	i = 0;
+	j = 0;
 
-    // array[j] = malloc((i_subst)*sizeof(char));
-
-    
-    i = 0;
-    i_subst = 0;
-    int k = 0;
-    while(s[i] != '\0' && i_subst < cnt){
-        if(s[i] != c){
-            array[i_subst][k] = s[i];
-            k++;
-        }else{
-            i_subst++;
-            k=0;
-        }
-        i++;
-    }
-    
-    printf("array[2]:%s\n", array[2]);
-    return array;
+	while(*s != '\0' && (s-1) != 0)
+	{
+		// printf("j: %d\n",j);
+		if(!isdelim(*s,c))
+		{
+			// printf("i: %d, j: %d, *s: %c\n",i,j, *s);
+			array[i][j] = *s;
+			j++;			
+		}
+		else if(!isdelim(*(s - 1), c) && isdelim(*s, c))
+		{
+			// printf("i: %d, j: %d\n",i,j);
+			if(j != 0)
+				array[i][j] = '\0';
+			i++;
+			j=0;			
+		}
+		s++;
+	}
+	// printf("i: %d\n",i);
+	if(*s == '\0' && i == cnt)
+		array[i] = 0;
+	else if(*s == '\0' && i < cnt)
+		array[i+1] = 0;
+	return (array);
 }
 
 // int main(){
-//     char string[] = "Helld World Heildronn";
-//     char delim = 'd';
+//     char string[] = "hello!";
+//     char delim = ' ';
 //     printf("Original String: %s\n", string);
 //     char** token = ft_split(string, delim);
 //     int i = 0;
-//     while (token[i] != 0){
-//         printf("elements: %s\n",token[i]);
+// 	printf("cnt: %d\n",cntwords(string,delim));
+// 	while (token[i] != NULL)
+// 	{
+//         printf("elements len %dth: %s\n",i,token[i]);
 //         i++;
 //     }
-//     printf("%s",token[2]);
+// 	i=0;
+// 	while(token[0][i] != '\0')
+// 	{
+// 		printf(" %c",token[0][i]);
+// 		i++;		
+// 	}
 
-//     // free (token);
 //     return 0;
 // }

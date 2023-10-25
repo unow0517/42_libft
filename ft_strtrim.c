@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:26:11 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/18 14:12:05 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/24 15:36:41 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,80 +14,74 @@
 #include <stdlib.h>
 #include "libft.h"
 
-// static char	*mv_head(char const *s1, char const *set)
-// {
-// 	int		i;
-// 	char	*s1_1;
-// 	int		j;
-// 	int		k;
+int	idx_start(const char *s1, const char *set)
+{
+	int		i;
+	char	*s1_p;
 
-// 	s1_1 = (char *)s1;
+	i = 0;
+	s1_p = (char *)s1;
+	while (s1_p[i] != '\0')
+	{
+		if (ft_strchr(set, s1_p[i]) == 0)
+			return (i);
+		i++;
+	}
+	return (0);
+}
 
-// 	while (s1_1[j] != '\0')
-// 	{
-// 		while (set[k] != '\0')
-// 		{
-// 			if (s1_1[j] == set[k])
-// 			{
-// 				printf("j:%d, k: %d\n",j,k);
-// 				i++;
-// 				j++;
-// 				k = -1;
-// 			}
-// 			k++;
-// 		}
-// 		j++;
-// 	}
-// 	printf("i :%d\n",i);
-// 	return (s1_1+i);
-// }
+int	idx_end(const char *s1, const char *set)
+{
+	int		i;
+	int		len;
+	char	*s1_p;
 
-// static int	idx_tail(char const *s1, char const *set)
-// {
-// 	char	*s1_1;
-// 	char	*newptr;
-// 	int		i;
-// 	int		j;
-// 	int		idx;
+	i = 0;
+	len = strlen(s1);
+	s1_p = (char *)s1;
+	while (i<len)
+	{
+		if (ft_strchr(set, s1[len - 1 - i]) == 0)
+			return (len - i - 1);
+		i++;
+	}
+	return (0);
+}
 
-// 	s1_1 = (char *)s1;
-// 	i = strlen(s1) - 1;
-// 	j = 0;
-// 	while (i)
-// 	{
-// 		while (set[j] != '\0')
-// 		{
-// 			if (s1_1[i] == set[j])
-// 			{
-// 				// printf("i:%d, j: %d\n",i,j);
-// 				i--;
-// 				j = -1;
-// 			}
-// 			else
-// 				printf("i:%d, j: %d\n",i,j);
-// 			j++;
-// 		}
-// 		i--;
-// 	}
-// 	return (i);
-// }
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*newstr;
+	int		i_st;
+	int		i_end;
 
-// char	*ft_strtrim(char const *s1, char const *set)
-// {
-// 	return (*s1 + *set);
-// }
-
+	i_st = idx_start(s1, set);
+	i_end = idx_end(s1, set);
+	newstr = 0;
+	if (s1[0] == '\0' || set[0] == '\0')
+	{
+		return (ft_strdup(s1));
+	}
+	if (i_st >= i_end && i_st == 0)
+	{
+		return (ft_strdup(""));
+	}
+	else if (idx_end - idx_start + 1 > 0)
+		newstr = (char *)malloc(sizeof(char) * (i_end - i_st + 2));
+	if (!newstr)
+		return (0);
+	ft_strlcpy(newstr, s1 + i_st, i_end - i_st + 2);
+	return (newstr);
+}
 
 // int main(){
-//     char s1[] = "CatDogCatLionCat";
-//     char set[] = "Cat";
-//     //result should be lloorld
+//     char s1[] = "";
+//     char set[] = "";
+//     char* res = ft_strtrim(s1, set);
+//     int i_start = idx_start(s1, set);
+// 	int i_end = idx_end(s1, set);
 
-//     // char* res = ft_strtrim(s1, set);
-// 	int res = idx_tail(s1, set);
-// 	// char* res = mv_head(s1, set);
-//     // printf("result: %s",res);
-// 	printf("index: %d",res);
-
+// 	printf("result: %s\n",res);
+//     printf("idx_start: %d\n",i_start);
+// 	printf("idx_end: %d",i_end);
 //     return 0;
 // }

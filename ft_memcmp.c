@@ -6,10 +6,9 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 07:38:53 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/17 13:10:42 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/23 15:49:06 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 int	ft_memcmp(const void *str1, const void	*str2, unsigned int n)
 {
