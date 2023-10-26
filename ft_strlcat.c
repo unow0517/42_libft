@@ -6,28 +6,13 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 14:44:57 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/17 18:31:30 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/26 15:05:42 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <limits.h>
 #include "libft.h"
 
-// unsigned long ft_strlen(const char* str)
-// {
-//     unsigned int len = 0;
-//     while(*str != '\0'){
-//         len++;
-//         str++;
-//     }
-//     return len;
-// }
-
-//return value : the initial length of dst plus the length of src.
-//size: total size of modified dest
-unsigned int	ft_strlcat(char	*dst, const char *src, unsigned int size)
+size_t	ft_strlcat(char	*dst, const char *src, unsigned int size)
 {
 	unsigned int	result;
 	unsigned int	i;

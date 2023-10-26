@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:26:11 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/24 15:36:41 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/26 14:59:13 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	idx_end(const char *s1, const char *set)
 	i = 0;
 	len = strlen(s1);
 	s1_p = (char *)s1;
-	while (i<len)
+	while (i < len)
 	{
 		if (ft_strchr(set, s1[len - 1 - i]) == 0)
 			return (len - i - 1);

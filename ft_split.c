@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:31:29 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/26 11:06:09 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/26 17:28:10 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	get_start(const char *s, char c)
 	return (cnt);
 }
 
-static	int	get_len(const char *s, char c)
+static int	get_len(const char *s, char c)
 {
 	int	cnt;
 
@@ -55,6 +55,17 @@ static	int	get_len(const char *s, char c)
 		cnt++;
 	}
 	return (cnt);
+}
+
+static char	**free_mem(char **s, int count)
+{
+	while (count >= 0)
+	{
+		free(s[count]);
+		count--;
+	}
+	free(s);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -76,6 +87,8 @@ char	**ft_split(char const *s, char c)
 		start = start + get_start(s + start, c);
 		len = get_len(s + start, c);
 		array[i] = ft_substr(s, start, len);
+		if (array[i] == NULL)
+			return (free_mem(array, i));
 		start = start + len + 1;
 		i++;
 	}
@@ -84,8 +97,8 @@ char	**ft_split(char const *s, char c)
 }
 
 // int main(){
-//     char string[] = "      split       this for   me  !       ";
-//     char delim = ' ';
+//     char string[] = "^^^1^^2a,^^^^3^^^^--h^^^^";
+//     char delim = '^';
 //     char** token = ft_split(string, delim);
 //     int i = 0;
 // 	while(token[i] != 0)

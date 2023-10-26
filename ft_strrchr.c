@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:40:33 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/17 20:16:06 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/26 15:22:53 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ char	*ft_strrchr(const char *str, int c)
 	i = 0;
 	while (ptr[i] != '\0')
 		i++;
-
 	while (i >= 0)
 	{
 		if (ptr[i] == (char)c)
@@ -30,7 +29,6 @@ char	*ft_strrchr(const char *str, int c)
 	}
 	return (0);
 }
-
 
 // #include <stdio.h>
 // #include <string.h>
@@ -49,6 +47,5 @@ char	*ft_strrchr(const char *str, int c)
 //    ft_ret = ft_strrchr(str,ch);
 
 //    printf("String after |%c| is - |%s|\n", ch, ft_ret);
-   
 //    return(0);
 // }

@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 10:34:45 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/26 17:28:25 by yowoo            ###   ########.fr       */
+/*   Created: 2023/10/26 12:18:35 by yowoo             #+#    #+#             */
+/*   Updated: 2023/10/26 14:55:08 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int	i;
+	t_list	*temp;
 
-	i = 0;
-	while (s[i] != '\0')
+	if (lst)
 	{
-		f(i, &s[i]);
-		i++;
+		while (*lst)
+		{
+			temp = (*lst)->next;
+			ft_lstdelone(*lst, del);
+			*lst = temp;
+		}
 	}
 }
-
-// int	main(void)
-// {
-// 	// char	*res;
-// 	char	*str;
-
-// 	str = "Hello World";
-// 	printf("str: %s\n", str);
-// 	ft_striteri(str, my_convert);
-// 	printf("str_after: %s", str);
-// 	// printf("res: %s", "Hello");
-// 	return (0);
-// }

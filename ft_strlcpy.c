@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 14:43:49 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/19 10:08:49 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/26 15:04:13 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <string.h>
 #include "libft.h"
 
-unsigned long	ft_strlcpy(char *dst, const char *src, unsigned int n)
+size_t	ft_strlcpy(char *dst, const char *src, unsigned int n)
 {
-	unsigned long	result;
-	char			*srcp;
+	size_t	result;
+	char	*srcp;
 
 	srcp = (char *)src;
 	while (*srcp != '\0' && n >= strlen(src) + 1)

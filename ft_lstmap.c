@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 09:56:13 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/26 17:28:53 by yowoo            ###   ########.fr       */
+/*   Created: 2023/10/26 12:56:47 by yowoo             #+#    #+#             */
+/*   Updated: 2023/10/26 17:19:49 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int		i;
-	char	*res;
+	t_list	*res;
+	void	*content;
+	t_list	*new_node;
 
-	i = 0;
-	res = (char *)malloc((strlen(s) + 1) * sizeof(char));
-	if (!res)
-		return (0);
-	while (*s)
+	res = 0;
+	while (lst)
 	{
-		*(res + i) = f(i, *s++);
-		i++;
+		if (f)
+			content = f(lst->content);
+		if (!content)
+			ft_lstclear(&res, del);
+		new_node = ft_lstnew(content);
+		if (!new_node)
+		{
+			ft_lstclear(&res, del);
+			del(content);
+		}
+		ft_lstadd_back(&res, new_node);
+		lst = lst->next;
 	}
-	*(res + i) = '\0';
 	return (res);
 }
 
-// int main(void)
-// {
-// 	char	*res;
-// 	char	*str;
-
-// 	str = "Hello World";
-// 	res = ft_strmapi(str, my_toupper);
-// 	printf("res: %s", res);
-// 	return (0);
-// }
+//making head, then iterate following nodes.

@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:28:25 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/24 14:44:39 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/26 17:27:19 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-//use malloc
-//use % /
-// char	*ft_strdup(const char *src)
-// {
-// 	char	*result;
-// 	int		i;
-// 	int		j;
-
-// 	i = 0;
-// 	result = (char *)malloc((strlen(src)+1) * sizeof(char));
-// 	if (!result)
-// 		return (0);
-// 	while (src[i] != '\0')
-// 	{
-// 		result[i] = src[i];
-// 		i++;
-// 	}
-// 	result[i] = '\0';
-// 	j = 0;
-// 	if (src[j] == '\0')
-// 		result[j] = '\0';
-// 	return (result);
-// }
-
-unsigned int	lenhelperplus(unsigned int x)
+static unsigned int	lenhelperplus(unsigned int x)
 {
 	if (x >= 1000000000)
 		return (10);
@@ -61,7 +37,7 @@ unsigned int	lenhelperplus(unsigned int x)
 	return (1);
 }
 
-unsigned int	lenhelperminus(int x)
+static unsigned int	lenhelperminus(int x)
 {
 	if (x <= -1000000000)
 		return (10);
@@ -84,7 +60,7 @@ unsigned int	lenhelperminus(int x)
 	return (1);
 }
 
-char	*putintplus(unsigned int num)
+static char	*putintplus(unsigned int num)
 {
 	char	*res;
 	int		len;
@@ -93,7 +69,7 @@ char	*putintplus(unsigned int num)
 	j = 0;
 	len = lenhelperplus(num);
 	res = (char *)malloc((len + 1) * sizeof(char));
-	if(!res)
+	if (!res)
 		return (0);
 	while (j < len)
 	{
@@ -105,7 +81,7 @@ char	*putintplus(unsigned int num)
 	return (res);
 }
 
-char	*putintminus(int num)
+static char	*putintminus(int num)
 {
 	char	*res;
 	int		len;
@@ -118,7 +94,7 @@ char	*putintminus(int num)
 		num = -num;
 		j = 0;
 		res = (char *)malloc((len + 2) * sizeof(char));
-		if(!res)
+		if (!res)
 			return (0);
 		while (j++ < len)
 		{
@@ -134,7 +110,8 @@ char	*putintminus(int num)
 char	*ft_itoa(int n)
 {
 	char	*res;
-	if(n == -2147483648)
+
+	if (n == -2147483648)
 	{
 		return (ft_strdup("-2147483648"));
 	}
@@ -149,15 +126,15 @@ char	*ft_itoa(int n)
 	return (res);
 }
 
-int main(){
-	int i = -10004;
-	// printf("res: %s", ft_itoa(i));
-	// while(i)
-	// {
-    // 	printf("%d\n", i % 10);
-    // 	i /= 10;
-	// }
-	// printf("len: %d\n",lenhelper(i));
-	// printf("putintplus: %s\n",putintplus(i));
-	printf("itoa: %s\n",ft_itoa(i));
-}
+// int main(){
+// 	int i = -10004;
+// 	// printf("res: %s", ft_itoa(i));
+// 	// while(i)
+// 	// {
+//     // 	printf("%d\n", i % 10);
+//     // 	i /= 10;
+// 	// }
+// 	// printf("len: %d\n",lenhelper(i));
+// 	// printf("putintplus: %s\n",putintplus(i));
+// 	printf("itoa: %s\n",ft_itoa(i));
+// }
