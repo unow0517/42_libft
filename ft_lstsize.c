@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 11:08:52 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/25 14:23:55 by yowoo            ###   ########.fr       */
+/*   Created: 2023/10/25 14:46:48 by yowoo             #+#    #+#             */
+/*   Updated: 2023/10/25 14:57:09 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*first_node;
+	int		cnt;
+	t_list	*current;
 
-	first_node = (t_list *)malloc(sizeof(t_list));
-	if (!(first_node))
+	if (!lst)
 		return (0);
-	first_node->content = content;
-	first_node->next = 0;
-	return (first_node);
+	cnt = 0;
+	current = lst;
+	while (current->next != 0)
+	{
+		cnt++;
+		current = current->next;
+	}
+	return (cnt + 1);
 }
-
-// int	main()
-// {
-// 	char str[] = "hello";
-// 	t_list *ptr;
-
-// 	ptr = ft_lstnew(str);
-// 	while(ptr != NULL)
-// 	{
-// 		printf("%s", ptr->content);
-// 		ptr = ptr->next;
-// 	}
-// 	return (0);
-// }

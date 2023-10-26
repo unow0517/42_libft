@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 10:37:28 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/25 11:07:23 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/25 17:00:04 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
 void			*ft_calloc(unsigned int nitems, unsigned int size);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
@@ -45,7 +46,7 @@ char			*ft_strrchr(const char *str, int c);
 char			*ft_strtrim(char const *s1, char const *set);
 int				ft_strncmp(const char *str1, const char* str2, unsigned int n);
 void			*ft_memchr(const void *str, int c, unsigned int n);
-int				ft_memcmp(const void* str1, const void* str2, unsigned int n);
+int				ft_memcmp(const void *str1, const void *str2, unsigned int n);
 char			*ft_strnstr(const char *big, const char *little, unsigned int n);
 int				ft_atoi(const char *str);
 char			*ft_itoa(int n);
@@ -58,5 +59,11 @@ void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 char			**ft_split(char const *s, char c);
 
+t_list			*ft_lstnew(void *content);
+void			ft_lstadd_front(t_list **lst, t_list *new);
+int				ft_lstsize(t_list *lst);
+t_list			*ft_lstlast(t_list *lst);
+void			ft_lstadd_back(t_list **lst, t_list *new);
+void			ft_lstdelone(t_list *lst, void (*del)(void*));
 
 #endif  //header guard = line 1, 2 and the last line, it is once-only header
