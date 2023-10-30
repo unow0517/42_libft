@@ -1,7 +1,0 @@
-{
-	"editor.detectIndentation": false,
-	"files.associations": {
-		"__locale": "c",
-		"iterator": "c"
-	}
-}
