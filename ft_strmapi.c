@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:56:13 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/26 17:28:53 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/30 13:04:52 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*res;
 
 	i = 0;
-	res = (char *)malloc((strlen(s) + 1) * sizeof(char));
+	res = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!res)
 		return (0);
 	while (*s)

@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 14:43:49 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/26 15:04:13 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/30 13:04:19 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ size_t	ft_strlcpy(char *dst, const char *src, unsigned int n)
 	char	*srcp;
 
 	srcp = (char *)src;
-	while (*srcp != '\0' && n >= strlen(src) + 1)
+	while (*srcp != '\0' && n >= ft_strlen(src) + 1)
 		*dst++ = *srcp++;
 	if (*srcp == '\0')
 	{
 		*dst = '\0';
-		result = strlen(src);
+		result = ft_strlen(src);
 	}
 	if (n == 0)
-		return (strlen(src));
-	while (*srcp != '\0' && n < strlen(src) + 1 && n)
+		return (ft_strlen(src));
+	while (*srcp != '\0' && n < ft_strlen(src) + 1 && n)
 	{
 		*dst++ = *srcp++;
 		n--;
@@ -37,7 +37,7 @@ size_t	ft_strlcpy(char *dst, const char *src, unsigned int n)
 	if (n == 0)
 	{
 		*(dst - 1) = '\0';
-		result = strlen(src);
+		result = ft_strlen(src);
 	}
 	return (result);
 }

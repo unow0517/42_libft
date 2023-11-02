@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:24:07 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/17 18:01:20 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/30 12:37:49 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strdup(const char *src)
 	int		j;
 
 	i = 0;
-	result = (char *)malloc((strlen(src)+1) * sizeof(char));
+	result = (char *)malloc((ft_strlen(src)+1) * sizeof(char));
 	if (!result)
 		return (0);
 	while (src[i] != '\0')

@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 13:39:46 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/17 18:21:12 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/30 12:38:12 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*result;
 	char	*res_ptr;
 
-	result = (char *)malloc((strlen(s1)+strlen(s2)+1) * sizeof(char));
+	result = (char *)malloc((ft_strlen(s1)+ft_strlen(s2)+1) * sizeof(char));
 	if (!result)
 		return (0);
 	res_ptr = result;

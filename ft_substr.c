@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 13:01:37 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/26 14:59:27 by yowoo            ###   ########.fr       */
+/*   Updated: 2023/10/30 13:12:53 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	slength = strlen(s);
+	slength = ft_strlen(s);
 	if (!s)
 		return (NULL);
 	if (len > slength - start)
