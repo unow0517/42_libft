@@ -1,0 +1,4 @@
+# Libft
+Library of Functions. 
+
+# 
