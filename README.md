@@ -10,4 +10,4 @@ Library of Functions. It will be used in most of projects in 42 Curriculum.
 * take edge cases into consideration when implementing a function, you can check the edge cases  with [Francinette](https://github.com/xicodomingues/francinette) for each function.
 
 # How To Use
-1. `git clone https://github.com/xicodomingues/francinette
+1. `git clone 
