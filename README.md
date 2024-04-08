@@ -1,5 +1,5 @@
 # Libft
-Library of Functions. It will be used in most of projects in 42 Curriculum.
+Library of Functions in C. It will be used in most of projects in 42 Curriculum.
 
 # Must Know
 * solid knowledge in pointer in c is required.
