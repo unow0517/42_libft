@@ -6,13 +6,9 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 08:44:48 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/30 13:09:03 by yowoo            ###   ########.fr       */
+/*   Updated: 2024/03/07 12:44:05 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <string.h>
-#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
