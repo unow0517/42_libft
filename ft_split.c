@@ -92,7 +92,7 @@ char	**ft_split(char const *s, char c)
 		start = start + len + 1;
 		i++;
 	}
-	array[i] = 0;
+	array[i] = NULL;
 	return (array);
 }
 
