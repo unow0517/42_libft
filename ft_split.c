@@ -6,7 +6,7 @@
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:31:29 by yowoo             #+#    #+#             */
-/*   Updated: 2023/10/26 17:28:10 by yowoo            ###   ########.fr       */
+/*   Updated: 2024/05/11 13:11:10 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ char	**ft_split(char const *s, char c)
 		start = start + len + 1;
 		i++;
 	}
-	array[i] = 0;
+	array[i] = NULL;
 	return (array);
 }
 
